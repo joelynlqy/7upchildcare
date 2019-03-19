@@ -8,4 +8,5 @@ urlpatterns = [
     path('explore_grid/', views.explore_grid, name='Explore_Grid'),
     path('explore_list/', views.explore_list, name='Explore_List'),
     path('subsidy/', views.subsidy, name='subsidy'),
+    path('maps/', views.maps, name='maps' )
 ]

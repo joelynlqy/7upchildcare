@@ -14,3 +14,6 @@ def explore_list(request):
 
 def subsidy(request):
     return render(request, 'subsidy.html', None) 
+
+def maps(request):
+    return render(request, 'maps.html', None) 

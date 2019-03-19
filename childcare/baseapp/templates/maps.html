@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-<!-- saved from url=(0148)https://trello-attachments.s3.amazonaws.com/5c5596aefb42bf03e7155b75/5c75f657c2ec4557701034e6/2a9b79f13e85ce265687847485f3ce13/7Up_Childcentres.html -->
 <html lang="en" class="gr__trello-attachments_s3_amazonaws_com"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 	
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,13 +11,11 @@
 
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 	<!-- range.css link -->
-	<link rel="stylesheet" type="text/css" href="./7Up Childcentres_files/range.css">
 
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.js"></script>
 	
 	
 	<script type="text/javascript">$(document).ready(function(){$(".rating").rating({maxRating:5});});</script>
-	<script src="./7Up Childcentres_files/range.js.download"></script>
 		<style>
 	
 	#search {
@@ -97,7 +94,7 @@ $(".get-markers").on("click", getAllMarkers);
     
        
     <div class="ui inverted borderless menu" id="blackbox">
-        <a class="item large text" id="title" href = "./home.html">
+        <a class="item large text" id="title" href="{% url 'Homepage' %}">
             7UP Ch<i class="child icon" id="childicon"></i>ldcare
         </a>
         <div class="item right" id="search">
@@ -107,13 +104,13 @@ $(".get-markers").on("click", getAllMarkers);
             </div>
         </div>
         <div class="right menu medium text">
-            <a class="item"  id="explore" href ="./7Up Childcentres.html"> 
-                <i class="compass outline icon" ></i> Explore 
+            <a class="item" href="{% url 'Explore_Grid' %}">
+                <i class="compass outline icon"></i> Explore
             </a>
-            <a class="item ">
-                <i class="map outline icon" href="./maps.html"></i> Maps
+            <a class="item" href="{%url 'maps' %}">
+                <i class="map outline icon"></i> Maps
             </a>
-            <a class="item">
+            <a class="item" href="{% url 'subsidy' %}">
                 <i class="dollar sign icon"></i> Subsidies
             </a>
 
@@ -394,9 +391,9 @@ $(".get-markers").on("click", getAllMarkers);
 						<div class="column">
 							<div class="ui right floated left aligned menu" id="noBoxShadow">
 								<div class="header item">View by</div>
-								<a class="item " href="https://trello-attachments.s3.amazonaws.com/5c5596aefb42bf03e7155b75/5c75f657c2ec4557701034e6/2c3053d86b6a289d5a808ec0e35b4fac/7Up%20explore%20grid.html">Grid</a>
-								<a class="item active" href="https://trello-attachments.s3.amazonaws.com/5c5596aefb42bf03e7155b75/5c75f657c2ec4557701034e6/2c3053d86b6a289d5a808ec0e35b4fac/7Up%20explore%20list.html">List</a>
-								<a class="item">Map</a>
+								<a class="item" href="{% url 'Explore_Grid' %}">Grid</a>
+								<a class="item" href="{% url 'Explore_List' %}">List</a>
+								<a class="item active" href="{% url 'maps' %}">Map</a>
 							</div>
 						</div>
 					</div>

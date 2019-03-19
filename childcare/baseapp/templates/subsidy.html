@@ -126,7 +126,7 @@
 
 <body data-gr-c-s-loaded="true" style="">
   <div class="ui inverted borderless menu" id="blackbox">
-    <a class="item large text" id="title" href="./7Up Home page.html">
+    <a class="item large text" id="title" href="{% url 'Homepage' %}">
       7UP Ch<i class="child icon" id="childicon"></i>ldcare
     </a>
     <div class="item right" id="search">
@@ -136,13 +136,13 @@
       </div>
     </div>
     <div class="right menu medium text">
-      <a class="item" href="./7Up Childcentres explore grid.html">
+      <a class="item" href="{% url 'Explore_Grid' %}">
         <i class="compass outline icon"></i> Explore
       </a>
-      <a class="item ">
+      <a class="item" href="{%url 'maps' %}">
         <i class="map outline icon"></i> Maps
       </a>
-      <a class="item" href="./7Up subsidy page.html">
+      <a class="item" href="{% url 'subsidy' %}">
         <i class="dollar sign icon"></i> Subsidies
       </a>
 

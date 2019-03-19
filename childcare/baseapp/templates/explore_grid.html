@@ -32,6 +32,14 @@
                 });
         });
 
+        $(document).ready(function() {
+            $('#listerine').click(function() {
+                console.log("YEBOI2")
+                document.getElementById("layout").innerHTML = "Hello"
+            });
+        });
+        
+
     </script>
 
     <!--<script type = "text/javascript">
@@ -50,6 +58,7 @@
             document.getElementById("filterForm").reset();
             $('.ui.accordion').accordion("activate", false);
         }
+        
     </script>
 
 
@@ -108,8 +117,8 @@
 
 
 <body data-gr-c-s-loaded="true" style="">
-    <div class="ui inverted borderless menu">
-        <a class="item large text" id="title" href="./7Up Home page.html">
+    <div class="ui inverted borderless menu" id="blackbox">
+        <a class="item large text" id="title" href="{% url 'Homepage' %}">
             7UP Ch<i class="child icon" id="childicon"></i>ldcare
         </a>
         <div class="item right" id="search">
@@ -119,13 +128,13 @@
             </div>
         </div>
         <div class="right menu medium text">
-            <a class="item" href="./7Up Childcentres.html">
+            <a class="item" href="{% url 'Explore_Grid' %}">
                 <i class="compass outline icon"></i> Explore
             </a>
-            <a class="item ">
+            <a class="item" href="{%url 'maps' %}">
                 <i class="map outline icon"></i> Maps
             </a>
-            <a class="item" href="./7Up subsidy page.html">
+            <a class="item" href="{% url 'subsidy' %}">
                 <i class="dollar sign icon"></i> Subsidies
             </a>
 
@@ -466,9 +475,9 @@
                     <div class="column">
                         <div class="ui right floated left aligned menu" id="noBoxShadow">
                             <div class="header item">View by</div>
-                            <a class="item active" href="./7Up explore grid.html">Grid</a>
-                            <a class="item" href="./7Up explore list.html">List</a>
-                            <a class="item">Map</a>
+                            <a class="item active" id="grid" href="{% url 'Explore_Grid' %}">Grid</a>
+                            <a class="item" id="listerine">List</a>
+                            <a class="item" id="map" href="{% url 'maps' %}">Map</a>
                         </div>
                     </div>
                 </div>
@@ -476,7 +485,7 @@
             </div>
             <!-- Beginning of cards -->
 
-            <div class=grid>
+            <div id="layout" class=grid>
                 <div class="ui four stackable cards">
                     <div class="card">
                         <div class="image">
@@ -747,8 +756,7 @@
                         </div>
                     </div>
                 </div>
-            </div>
-            <!--PAGE NUMBER-->
+                <!--PAGE NUMBER-->
             <div class = "ui horizontal divider"></div>
             <div class = "ui horizontal divider"></div>
             <div class = "ui horizontal divider"></div>
@@ -767,6 +775,8 @@
                     <i class="right chevron icon"></i>
                 </a>
                 <!-- TODO Javascript for pagination -->
+            </div>
+            
 
             </div>
 
