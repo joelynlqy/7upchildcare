@@ -1,0 +1,1188 @@
+
+<!DOCTYPE html>
+<!-- saved from url=(0136)https://trello-attachments.s3.amazonaws.com/5c5596aefb42bf03e7155b75/5c75f657c2ec4557701034e6/df03110f2cf738378aaea8ffced72911/test.html -->
+<html lang="en" class="gr__trello-attachments_s3_amazonaws_com">
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>7Up Childcentres</title>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" crossorigin="anonymous"></script>
+	<script type="text/javascript" src="http://code.jquery.com/ui/1.10.2/jquery-ui.js"></script>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css">
+	<link rel="stylesheet" type="text/css"
+	href="https://cdnjs.cloudflare.com/ajax/libs/fomantic-ui/2.7.2/semantic.min.css">
+	
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+	<!-- range.css link -->
+	<link rel="stylesheet" type="text/css" href="./7Up Childcentres_files/range.css">
+	
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.js"></script>
+	
+	
+	<script type="text/javascript">$(document).ready(function () { $(".rating").rating({ maxRating: 5 }); });</script>
+	<script src="./7Up Childcentres_files/range.js.download"></script>
+	
+	<script>
+		$(document).ready(function () {
+			$('.ui.accordion')
+			.accordion({
+				exclusive: false
+			});
+		});
+		
+	</script>
+	
+	<!--<script type = "text/javascript">
+		document.getElementById("clearAllButton").addEventListener("click", jquery(function($){
+			
+			$( '.ui.accordion' ).accordion({
+				active: false,
+				collapsible: true
+			})}));
+		</script>-->
+		
+		
+		
+		<script type="text/javascript">
+			function resetform() {
+				document.getElementById("filterForm").reset();
+				$('.ui.accordion').accordion("activate", false);
+			}
+		</script>
+		
+		
+		
+		<style>
+			#jiawei {
+				padding-left: 33px;
+				margin: 0px;
+			}
+			
+			#search {
+				width: 50%;
+			}
+			
+			#title {
+				margin: 10px;
+				margin-left: 30px;
+			}
+			
+			#childicon {
+				margin: 0px;
+				padding: 0px;
+			}
+			
+			.large.text {
+				font-size: 1.5rem;
+			}
+			
+			.medium.text {
+				font-size: 1.2rem;
+			}
+			
+			#clearAllButton {
+				margin-left: 18px;
+			}
+			
+			#location {
+				width: 80%
+			}
+			
+			#noBoxShadow {
+				box-shadow: none;
+			}
+			
+			#botpic {
+				width: 105%;
+				min-height: calc(70% - 100px);
+				height: 500px;
+				background-image: url("https://i.imgur.com/y5rpYcu.jpg");
+				
+				background-size: cover;
+			}
+		</style>
+		
+	</head>
+	
+	
+	<body data-gr-c-s-loaded="true" style="">
+		<div class="ui inverted borderless menu" id="blackbox">
+			<a class="item large text" id="title" href="{% url 'Homepage' %}">
+				7UP Ch<i class="child icon" id="childicon"></i>ldcare
+			</a>
+			<div class="item right" id="search">
+				<div class="ui icon input">
+					<input type="text" placeholder="Search...">
+					<i class="search link icon"></i>
+				</div>
+			</div>
+			<div class="right menu medium text">
+				<a class="item" href="{% url 'Explore_Grid' %}">
+					<i class="compass outline icon"></i> Explore
+				</a>
+				<a class="item" href="{%url 'maps' %}">
+					<i class="map outline icon"></i> Maps
+				</a>
+				<a class="item" href="{% url 'subsidy' %}">
+					<i class="dollar sign icon"></i> Subsidies
+				</a>
+				
+				<a class="ui item">
+					<i class="object ungroup outline icon"></i> Compare
+				</a>
+			</div>
+		</div>
+		<div class="ui grid container">
+			<div class="ui four wide column">
+			</div>
+			<div class="ui segment basic twelve wide column" id="noBoxShadow">
+				<div class="ui left rail" id="jiawei">
+					<div class="ui basic segment">
+						<div class="ui segment" id="noBoxShadow">
+							<i class="filter icon"></i>
+							<span class="text"> Filter</span>
+							<button class="ui basic button" id="clearAllButton" onclick="resetform();">
+								Clear All
+							</button>
+						</div>
+						<form id="filterForm">
+							<div class="ui styled fluid accordion">
+								<div class="active title">
+									<i class="dropdown icon"></i>
+									COST ($$)
+								</div>
+								<div class="active content">
+									<div class="ui form">
+										<div class="grouped fields">
+											<div class="field">
+												<div class="ui radio checkbox">
+													<input type="radio" name="cost" value="small">
+													<label>$1k-1.2</label>
+												</div>
+											</div>
+											<div class="field">
+												<div class="ui radio checkbox">
+													<input type="radio" name="cost" value="medium">
+													<label>$1.2k-1.3</label>
+												</div>
+											</div>
+											<div class="field">
+												<div class="ui radio checkbox">
+													<input type="radio" name="cost" value="large">
+													<label>$1.3k-1.4</label>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								
+								<div class="title">
+									<i class="dropdown icon"></i>
+									LOCATION
+								</div>
+								<div class="content">
+									<div class="ui icon input" id="location">
+										<input type="text" placeholder="Nearby...">
+										<button class="ui icon button">
+											<i class="map marker alternate icon"></i>
+										</button>
+									</div>
+								</div>
+								
+								<div class="title">
+									<i class="dropdown icon"></i>
+									AREA
+								</div>
+								<div class="content">
+									<div class="active content">
+										<div class="ui form">
+											<div class="grouped fields">
+												<div class="field">
+													<div class="ui radio checkbox">
+														<input type="radio" name="area">
+														<label>North</label>
+													</div>
+												</div>
+												<div class="field">
+													<div class="ui radio checkbox">
+														<input type="radio" name="area">
+														<label>South</label>
+													</div>
+												</div>
+												<div class="field">
+													<div class="ui radio checkbox">
+														<input type="radio" name="area">
+														<label>East</label>
+													</div>
+												</div>
+												<div class="field">
+													<div class="ui radio checkbox">
+														<input type="radio" name="area">
+														<label>West</label>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								
+								<div class="title">
+									<i class="dropdown icon"></i>
+									AGE
+								</div>
+								<div class="content">
+									<div class="active content">
+										<div class="ui form">
+											<div class="grouped fields">
+												<div class="field">
+													<div class="ui radio checkbox">
+														<input type="radio" name="age" value="small">
+														<label> 18 months and below(Infant) </label>
+													</div>
+												</div>
+												<div class="field">
+													<div class="ui radio checkbox">
+														<input type="radio" name="age" value="medium">
+														<label> 18-30months </label>
+													</div>
+												</div>
+												<div class="field">
+													<div class="ui radio checkbox">
+														<input type="radio" name="age" value="large">
+														<label> 3yrs(N1)</label>
+													</div>
+												</div>
+												<div class="field">
+													<div class="ui radio checkbox">
+														<input type="radio" name="age" value="x-large">
+														<label>4yrs(N2) </label>
+													</div>
+												</div>
+												<div class="field">
+													<div class="ui radio checkbox">
+														<input type="radio" name="age" value="x-large">
+														<label>5yrs(K1) </label>
+													</div>
+												</div>
+												<div class="field">
+													<div class="ui radio checkbox">
+														<input type="radio" name="age" value="x-large">
+														<label>6yrs(K2) </label>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								
+								<div class="title">
+									<i class="dropdown icon"></i>
+									2ND LANGUAGE
+								</div>
+								<div class="content">
+									<div class="active content">
+										<div class="ui form">
+											<div class="grouped fields">
+												<div class="field">
+													<div class="ui radio checkbox">
+														<input type="radio" name="language">
+														<label>Chinese</label>
+													</div>
+												</div>
+												<div class="field">
+													<div class="ui radio checkbox">
+														<input type="radio" name="language">
+														<label>Malay</label>
+													</div>
+												</div>
+												<div class="field">
+													<div class="ui radio checkbox">
+														<input type="radio" name="language">
+														<label>Tamil</label>
+													</div>
+												</div>
+												<div class="field">
+													<div class="ui radio checkbox">
+														<input type="radio" name="language">
+														<label>Others</label>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								
+								<div class="title">
+									<i class="dropdown icon"></i>
+									HOURS
+								</div>
+								<div class="content">
+									<div class="active content">
+										<div class="ui form">
+											<div class="grouped fields">
+												<div class="field">
+													<div class="ui radio checkbox">
+														<input type="radio" name="hour">
+														<label>Full Day</label>
+													</div>
+												</div>
+												<div class="field">
+													<div class="ui radio checkbox">
+														<input type="radio" name="hour">
+														<label>Half Day AM</label>
+													</div>
+												</div>
+												<div class="field">
+													<div class="ui radio checkbox">
+														<input type="radio" name="hour">
+														<label>Half Day PM</label>
+													</div>
+												</div>
+												
+											</div>
+										</div>
+									</div>
+								</div>
+								
+								<div class="title">
+									<i class="dropdown icon"></i>
+									RATINGS
+								</div>
+								<div class="content">
+									<div class="active content">
+										<div class="ui form">
+											<div class="grouped fields">
+												<div class="field">
+													<div class="ui radio checkbox">
+														<input type="radio" name="rating" value="x-large">
+														<label>5</label>
+													</div>
+												</div>
+												<div class="field">
+													<div class="ui radio checkbox">
+														<input type="radio" name="rating" value="x-large">
+														<label>4</label>
+													</div>
+												</div>
+												<div class="field">
+													<div class="ui radio checkbox">
+														<input type="radio" name="rating" value="large">
+														<label>3</label>
+													</div>
+												</div>
+												<div class="field">
+													<div class="ui radio checkbox">
+														<input type="radio" name="rating" value="medium">
+														<label>2</label>
+													</div>
+												</div>
+												<div class="field">
+													<div class="ui radio checkbox">
+														<input type="radio" name="rating" value="small">
+														<label>1</label>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								
+								
+								
+								
+								
+							</div>
+						</form>
+					</div>
+					
+					
+					<!--script for accordian filter bar-->
+					
+					<!--	<div class="ui vertical menu" id="Okkar">
+						<a class="teal item active">
+							Inbox
+							<div class="ui teal left pointing label">1</div>
+						</a>
+						<a class="item">
+							Spam
+							<div class="ui label">51</div>
+						</a>
+						<a class="item">
+							Updates
+							<div class="ui label">1</div>
+						</a>
+						<div class="item">
+							<div class="ui transparent icon input">
+								<input type="text" placeholder="Search mail...">
+								<i class="search icon"></i>
+							</div>
+						</div>
+					</div> -->
+				</div>
+				
+				<!-- Range selector (2nd Left Rail) 
+					<div class="ui segment">
+						<div class="ui range" id="range-2"></div>
+						<br>
+						<div class="ui input">
+							<input type="text" id="input-2">
+						</div>
+					</div> -->
+					
+					
+					<!-- <div class="ui floating dropdown labeled search icon button" id="dropdown">
+						<i class="world icon"></i>
+						<span class="text">Select Language</span>
+						<div class="menu">
+							<div class="item">Arabic</div>
+							<div class="item">Chinese</div>
+							<div class="item">Danish</div>
+							<div class="item">Dutch</div>
+							<div class="item">English</div>
+							<div class="item">French</div>
+							<div class="item">German</div>
+							<div class="item">Greek</div>
+							<div class="item">Hungarian</div>
+							<div class="item">Italian</div>
+							<div class="item">Japanese</div>
+							<div class="item">Korean</div>
+							<div class="item">Lithuanian</div>
+							<div class="item">Persian</div>
+							<div class="item">Polish</div>
+							<div class="item">Portuguese</div>
+							<div class="item">Russian</div>
+							<div class="item">Spanish</div>
+							<div class="item">Swedish</div>
+							<div class="item">Turkish</div>
+							<div class="item">Vietnamese</div>
+						</div>
+					</div> -->
+					<!-- VIEW BY -->
+					<div class="ui stackable two column grid container">
+						<div class="row">
+							<div class="column"></div>
+							<div class="column">
+								<div class="ui right floated left aligned menu" id="noBoxShadow">
+									<div class="header item">View by</div>
+									<a class="item" id="grid" href="{% url 'Explore_Grid' %}">Grid</a>
+									<a class="item active" id="list" href="{% url 'Explore_List' %}">List</a>
+									<a class="item" id="map" href="{% url 'maps' %}">Map</a>
+								</div>
+							</div>
+						</div>
+						<div class="row"></div>
+					</div>
+					<!-- Beginning of cards -->
+					<!--
+						<div class="ui four cards">
+							<div class="card">
+								<div class="image">
+									<img src="./7Up Childcentres_files/mfs-0316.jpg">
+								</div>
+								<div class="extra">
+									Rating:
+									<div class="ui star rating" data-rating="4"><i class="icon active"></i><i class="icon active"></i><i class="icon active"></i><i class="icon active"></i><i class="icon"></i></div>
+								</div>
+							</div>
+							<div class="card">
+								<div class="image">
+									<img src="./7Up Childcentres_files/mfs-0316.jpg">
+								</div>
+								<div class="extra">
+									Rating:
+									<div class="ui star rating" data-rating="2"><i class="icon active"></i><i class="icon active"></i><i class="icon"></i><i class="icon"></i><i class="icon"></i></div>
+								</div>
+							</div>
+							<div class="card">
+								<div class="image">
+									<img src="./7Up Childcentres_files/mfs-0316.jpg">
+								</div>
+								<div class="extra">
+									Rating:
+									<div class="ui star rating" data-rating="3"><i class="icon active"></i><i class="icon active"></i><i class="icon active"></i><i class="icon"></i><i class="icon"></i></div>
+								</div>
+							</div>
+							<div class="card">
+								<div class="image">
+									<img src="./7Up Childcentres_files/mfs-0316.jpg">
+								</div>
+								<div class="extra">
+									Rating:
+									<div class="ui star rating" data-rating="4"><i class="icon active"></i><i class="icon active"></i><i class="icon active"></i><i class="icon active"></i><i class="icon"></i></div>
+								</div>
+							</div>
+							<div class="card">
+								<div class="image">
+									<img src="./7Up Childcentres_files/mfs-0316.jpg">
+								</div>
+								<div class="extra">
+									Rating:
+									<div class="ui star rating" data-rating="3"><i class="icon active"></i><i class="icon active"></i><i class="icon active"></i><i class="icon"></i><i class="icon"></i></div>
+								</div>
+							</div>
+							<div class="card">
+								<div class="image">
+									<img src="./7Up Childcentres_files/mfs-0316.jpg">
+								</div>
+								<div class="extra">
+									Rating:
+									<div class="ui star rating" data-rating="3"><i class="icon active"></i><i class="icon active"></i><i class="icon active"></i><i class="icon"></i><i class="icon"></i></div>
+								</div>
+							</div>
+							<div class="card">
+								<div class="image">
+									<img src="./7Up Childcentres_files/mfs-0316.jpg">
+								</div>
+								<div class="extra">
+									Rating:
+									<div class="ui star rating" data-rating="4"><i class="icon active"></i><i class="icon active"></i><i class="icon active"></i><i class="icon active"></i><i class="icon"></i></div>
+								</div>
+							</div>
+							<div class="card">
+								<div class="image">
+									<img src="./7Up Childcentres_files/mfs-0316.jpg">
+								</div>
+								<div class="extra">
+									Rating:
+									<div class="ui star rating" data-rating="4"><i class="icon active"></i><i class="icon active"></i><i class="icon active"></i><i class="icon active"></i><i class="icon"></i></div>
+								</div>
+							</div>
+						</div>
+						<div class="ui four cards">
+							<div class="card">
+								<div class="image">
+									<img src="./7Up Childcentres_files/mfs-0316.jpg">
+								</div>
+								<div class="extra">
+									Rating:
+									<div class="ui star rating" data-rating="4"><i class="icon active"></i><i class="icon active"></i><i class="icon active"></i><i class="icon active"></i><i class="icon"></i></div>
+								</div>
+							</div>
+							<div class="card">
+								<div class="image">
+									<img src="./7Up Childcentres_files/mfs-0316.jpg">
+								</div>
+								<div class="extra">
+									Rating:
+									<div class="ui star rating" data-rating="2"><i class="icon active"></i><i class="icon active"></i><i class="icon"></i><i class="icon"></i><i class="icon"></i></div>
+								</div>
+							</div>
+							<div class="card">
+								<div class="image">
+									<img src="./7Up Childcentres_files/mfs-0316.jpg">
+								</div>
+								<div class="extra">
+									Rating:
+									<div class="ui star rating" data-rating="3"><i class="icon active"></i><i class="icon active"></i><i class="icon active"></i><i class="icon"></i><i class="icon"></i></div>
+								</div>
+							</div>
+							<div class="card">
+								<div class="image">
+									<img src="./7Up Childcentres_files/mfs-0316.jpg">
+								</div>
+								<div class="extra">
+									Rating:
+									<div class="ui star rating" data-rating="4"><i class="icon active"></i><i class="icon active"></i><i class="icon active"></i><i class="icon active"></i><i class="icon"></i></div>
+								</div>
+							</div>
+							<div class="card">
+								<div class="image">
+									<img src="./7Up Childcentres_files/mfs-0316.jpg">
+								</div>
+								<div class="extra">
+									Rating:
+									<div class="ui star rating" data-rating="3"><i class="icon active"></i><i class="icon active"></i><i class="icon active"></i><i class="icon"></i><i class="icon"></i></div>
+								</div>
+							</div>
+							<div class="card">
+								<div class="image">
+									<img src="./7Up Childcentres_files/mfs-0316.jpg">
+								</div>
+								<div class="extra">
+									Rating:
+									<div class="ui star rating" data-rating="3"><i class="icon active"></i><i class="icon active"></i><i class="icon active"></i><i class="icon"></i><i class="icon"></i></div>
+								</div>
+							</div>
+							<div class="card">
+								<div class="image">
+									<img src="./7Up Childcentres_files/mfs-0316.jpg">
+								</div>
+								<div class="extra">
+									Rating:
+									<div class="ui star rating" data-rating="4"><i class="icon active"></i><i class="icon active"></i><i class="icon active"></i><i class="icon active"></i><i class="icon"></i></div>
+								</div>
+							</div>
+							<div class="card">
+								<div class="image">
+									<img src="./7Up Childcentres_files/mfs-0316.jpg">
+								</div>
+								<div class="extra">
+									Rating:
+									<div class="ui star rating" data-rating="4"><i class="icon active"></i><i class="icon active"></i><i class="icon active"></i><i class="icon active"></i><i class="icon"></i></div>
+								</div>
+							</div>
+						</div>
+						<div class="ui four cards">
+							<div class="card">
+								<div class="image">
+									<img src="./7Up Childcentres_files/mfs-0316.jpg">
+								</div>
+								<div class="extra">
+									Rating:
+									<div class="ui star rating" data-rating="4"><i class="icon active"></i><i class="icon active"></i><i class="icon active"></i><i class="icon active"></i><i class="icon"></i></div>
+								</div>
+							</div>
+							<div class="card">
+								<div class="image">
+									<img src="./7Up Childcentres_files/mfs-0316.jpg">
+								</div>
+								<div class="extra">
+									Rating:
+									<div class="ui star rating" data-rating="2"><i class="icon active"></i><i class="icon active"></i><i class="icon"></i><i class="icon"></i><i class="icon"></i></div>
+								</div>
+							</div>
+							<div class="card">
+								<div class="image">
+									<img src="./7Up Childcentres_files/mfs-0316.jpg">
+								</div>
+								<div class="extra">
+									Rating:
+									<div class="ui star rating" data-rating="3"><i class="icon active"></i><i class="icon active"></i><i class="icon active"></i><i class="icon"></i><i class="icon"></i></div>
+								</div>
+							</div>
+							<div class="card">
+								<div class="image">
+									<img src="./7Up Childcentres_files/mfs-0316.jpg">
+								</div>
+								<div class="extra">
+									Rating:
+									<div class="ui star rating" data-rating="4"><i class="icon active"></i><i class="icon active"></i><i class="icon active"></i><i class="icon active"></i><i class="icon"></i></div>
+								</div>
+							</div>
+							<div class="card">
+								<div class="image">
+									<img src="./7Up Childcentres_files/mfs-0316.jpg">
+								</div>
+								<div class="extra">
+									Rating:
+									<div class="ui star rating" data-rating="3"><i class="icon active"></i><i class="icon active"></i><i class="icon active"></i><i class="icon"></i><i class="icon"></i></div>
+								</div>
+							</div>
+							<div class="card">
+								<div class="image">
+									<img src="./7Up Childcentres_files/mfs-0316.jpg">
+								</div>
+								<div class="extra">
+									Rating:
+									<div class="ui star rating" data-rating="3"><i class="icon active"></i><i class="icon active"></i><i class="icon active"></i><i class="icon"></i><i class="icon"></i></div>
+								</div>
+							</div>
+							<div class="card">
+								<div class="image">
+									<img src="./7Up Childcentres_files/mfs-0316.jpg">
+								</div>
+								<div class="extra">
+									Rating:
+									<div class="ui star rating" data-rating="4"><i class="icon active"></i><i class="icon active"></i><i class="icon active"></i><i class="icon active"></i><i class="icon"></i></div>
+								</div>
+							</div>
+							<div class="card">
+								<div class="image">
+									<img src="./7Up Childcentres_files/mfs-0316.jpg">
+								</div>
+								<div class="extra">
+									Rating:
+									<div class="ui star rating" data-rating="4"><i class="icon active"></i><i class="icon active"></i><i class="icon active"></i><i class="icon active"></i><i class="icon"></i></div>
+								</div>
+							</div>
+						-->
+						<div class="grid">
+							<table class="ui inverted table">
+								<thead>
+									<tr class="center aligned">
+										<th class="two wide"> </th>
+										<th class="three wide">Name</th>
+										<th class="four wide">Street</th>
+										<th class="two wide">Rating</th>
+										<th class="one wide">Estimated cost($)</th>
+										<th class="one wide">ICCP</th>
+									</tr>
+								</thead>
+							</table>
+							<table class="ui basic table" id="noBoxShadow">
+								<thead>
+									<tr class="center aligned">
+										<th class="two wide">
+											<div class="image">
+												<img src="./7Up Childcentres_files/mfs-0316.jpg">
+											</div>
+										</th>
+										<th class="three wide">Sparkletots</th>
+										<th class="four wide">PCF Sparkletots Preschool Bukit Batok West Avenue 8</th>
+										<th class="two wide">
+											<div class="extra">
+												<div class="ui star rating" data-rating="4"><i class="icon active"></i><i
+													class="icon active"></i><i class="icon active"></i><i
+													class="icon active"></i><i class="icon"></i></div>
+												</div>
+											</th>
+											<th class="one wide">2344</th>
+											<th class="one wide">
+												<div class="ui radio checkbox">
+													<input type="radio" name="radio" disabled="disabled">
+													<label></label>
+												</div>
+											</th>
+										</tr>
+									</thead>
+								</table>
+								
+								<table class="ui basic table" id="noBoxShadow">
+									<thead>
+										<tr class="center aligned">
+											<th class="two wide">
+												<div class="image">
+													<img src="./7Up Childcentres_files/mfs-0316.jpg">
+												</div>
+											</th>
+											<th class="three wide">Sparkletots</th>
+											<th class="four wide">PCF Sparkletots Preschool Bukit Batok West Avenue 8</th>
+											<th class="two wide">
+												<div class="extra">
+													<div class="ui star rating" data-rating="4"><i class="icon active"></i><i
+														class="icon active"></i><i class="icon active"></i><i
+														class="icon active"></i><i class="icon"></i></div>
+													</div>
+												</th>
+												<th class="one wide">2344</th>
+												<th class="one wide">
+													<div class="ui read-only radio checkbox">
+														<input type="checkbox" checked="checked" disabled="disabled">
+														<label></label>
+													</div>
+												</th>
+											</tr>
+										</thead>
+									</table>
+									
+									<table class="ui basic table" id="noBoxShadow">
+										<thead>
+											<tr class="center aligned">
+												<th class="two wide">
+													<div class="image">
+														<img src="./7Up Childcentres_files/mfs-0316.jpg">
+													</div>
+												</th>
+												<th class="three wide">Sparkletots</th>
+												<th class="four wide">PCF Sparkletots Preschool Bukit Batok West Avenue 8</th>
+												<th class="two wide">
+													<div class="extra">
+														<div class="ui star rating" data-rating="4"><i class="icon active"></i><i
+															class="icon active"></i><i class="icon active"></i><i
+															class="icon active"></i><i class="icon"></i></div>
+														</div>
+													</th>
+													<th class="one wide">2344</th>
+													<th class="one wide">
+														<div class="ui radio checkbox">
+															<input type="radio" name="radio" disabled="disabled">
+															<label></label>
+														</div>
+													</th>
+												</tr>
+											</thead>
+										</table>
+										
+										<table class="ui basic table" id="noBoxShadow">
+											<thead>
+												<tr class="center aligned">
+													<th class="two wide">
+														<div class="image">
+															<img src="./7Up Childcentres_files/mfs-0316.jpg">
+														</div>
+													</th>
+													<th class="three wide">Sparkletots</th>
+													<th class="four wide">PCF Sparkletots Preschool Bukit Batok West Avenue 8</th>
+													<th class="two wide">
+														<div class="extra">
+															<div class="ui star rating" data-rating="4"><i class="icon active"></i><i
+																class="icon active"></i><i class="icon active"></i><i
+																class="icon active"></i><i class="icon"></i></div>
+															</div>
+														</th>
+														<th class="one wide">2344</th>
+														<th class="one wide">
+															<div class="ui read-only radio checkbox">
+																<input type="checkbox" checked="checked" disabled="disabled">
+																<label></label>
+															</div>
+														</th>
+													</tr>
+												</thead>
+											</table>
+											
+											<table class="ui basic table" id="noBoxShadow">
+												<thead>
+													<tr class="center aligned">
+														<th class="two wide">
+															<div class="image">
+																<img src="./7Up Childcentres_files/mfs-0316.jpg">
+															</div>
+														</th>
+														<th class="three wide">Sparkletots</th>
+														<th class="four wide">PCF Sparkletots Preschool Bukit Batok West Avenue 8</th>
+														<th class="two wide">
+															<div class="extra">
+																<div class="ui star rating" data-rating="4"><i class="icon active"></i><i
+																	class="icon active"></i><i class="icon active"></i><i
+																	class="icon active"></i><i class="icon"></i></div>
+																</div>
+															</th>
+															<th class="one wide">2344</th>
+															<th class="one wide">
+																<div class="ui read-only radio checkbox">
+																	<input type="checkbox" checked="checked" disabled="disabled">
+																	<label></label>
+																</div>
+															</th>
+														</tr>
+													</thead>
+												</table>
+												<table class="ui basic table" id="noBoxShadow">
+													<thead>
+														<tr class="center aligned">
+															<th class="two wide">
+																<div class="image">
+																	<img src="./7Up Childcentres_files/mfs-0316.jpg">
+																</div>
+															</th>
+															<th class="three wide">Sparkletots</th>
+															<th class="four wide">PCF Sparkletots Preschool Bukit Batok West Avenue 8</th>
+															<th class="two wide">
+																<div class="extra">
+																	<div class="ui star rating" data-rating="4"><i class="icon active"></i><i
+																		class="icon active"></i><i class="icon active"></i><i
+																		class="icon active"></i><i class="icon"></i></div>
+																	</div>
+																</th>
+																<th class="one wide">2344</th>
+																<th class="one wide">
+																	<div class="ui read-only radio checkbox">
+																		<input type="checkbox" checked="checked" disabled="disabled">
+																		<label></label>
+																	</div>
+																</th>
+															</tr>
+														</thead>
+													</table>
+													<table class="ui basic table" id="noBoxShadow">
+														<thead>
+															<tr class="center aligned">
+																<th class="two wide">
+																	<div class="image">
+																		<img src="./7Up Childcentres_files/mfs-0316.jpg">
+																	</div>
+																</th>
+																<th class="three wide">Sparkletots</th>
+																<th class="four wide">PCF Sparkletots Preschool Bukit Batok West Avenue 8</th>
+																<th class="two wide">
+																	<div class="extra">
+																		<div class="ui star rating" data-rating="4"><i class="icon active"></i><i
+																			class="icon active"></i><i class="icon active"></i><i
+																			class="icon active"></i><i class="icon"></i></div>
+																		</div>
+																	</th>
+																	<th class="one wide">2344</th>
+																	<th class="one wide">
+																		<div class="ui read-only radio checkbox">
+																			<input type="checkbox" disabled="disabled">
+																			<label></label>
+																		</div>
+																	</th>
+																</tr>
+															</thead>
+														</table>
+														
+														<table class="ui basic table" id="noBoxShadow">
+															<thead>
+																<tr class="center aligned">
+																	<th class="two wide">
+																		<div class="image">
+																			<img src="./7Up Childcentres_files/mfs-0316.jpg">
+																		</div>
+																	</th>
+																	<th class="three wide">Sparkletots</th>
+																	<th class="four wide">PCF Sparkletots Preschool Bukit Batok West Avenue 8</th>
+																	<th class="two wide">
+																		<div class="extra">
+																			<div class="ui star rating" data-rating="4"><i class="icon active"></i><i
+																				class="icon active"></i><i class="icon active"></i><i
+																				class="icon active"></i><i class="icon"></i></div>
+																			</div>
+																		</th>
+																		<th class="one wide">2344</th>
+																		<th class="one wide">
+																			<div class="ui read-only radio checkbox">
+																				<input type="checkbox" checked="checked" disabled="disabled">
+																				<label></label>
+																			</div>
+																		</th>
+																	</tr>
+																</thead>
+															</table>
+															<table class="ui basic table" id="noBoxShadow">
+																<thead>
+																	<tr class="center aligned">
+																		<th class="two wide">
+																			<div class="image">
+																				<img src="./7Up Childcentres_files/mfs-0316.jpg">
+																			</div>
+																		</th>
+																		<th class="three wide">Sparkletots</th>
+																		<th class="four wide">PCF Sparkletots Preschool Bukit Batok West Avenue 8</th>
+																		<th class="two wide">
+																			<div class="extra">
+																				<div class="ui star rating" data-rating="4"><i class="icon active"></i><i
+																					class="icon active"></i><i class="icon active"></i><i
+																					class="icon active"></i><i class="icon"></i></div>
+																				</div>
+																			</th>
+																			<th class="one wide">2344</th>
+																			<th class="one wide">
+																				<div class="ui read-only radio checkbox">
+																					<input type="checkbox" checked="checked" disabled="disabled">
+																					<label></label>
+																				</div>
+																			</th>
+																		</tr>
+																	</thead>
+																</table>
+																<table class="ui basic table" id="noBoxShadow">
+																	<thead>
+																		<tr class="center aligned">
+																			<th class="two wide">
+																				<div class="image">
+																					<img src="./7Up Childcentres_files/mfs-0316.jpg">
+																				</div>
+																			</th>
+																			<th class="three wide">Sparkletots</th>
+																			<th class="four wide">PCF Sparkletots Preschool Bukit Batok West Avenue 8</th>
+																			<th class="two wide">
+																				<div class="extra">
+																					<div class="ui star rating" data-rating="4"><i class="icon active"></i><i
+																						class="icon active"></i><i class="icon active"></i><i
+																						class="icon active"></i><i class="icon"></i></div>
+																					</div>
+																				</th>
+																				<th class="one wide">2344</th>
+																				<th class="one wide">
+																					<div class="ui read-only radio checkbox">
+																						<input type="checkbox" disabled="disabled">
+																						<label></label>
+																					</div>
+																				</th>
+																			</tr>
+																		</thead>
+																	</table>
+																	
+																	<table class="ui basic table" id="noBoxShadow">
+																		<thead>
+																			<tr class="center aligned">
+																				<th class="two wide">
+																					<div class="image">
+																						<img src="./7Up Childcentres_files/mfs-0316.jpg">
+																					</div>
+																				</th>
+																				<th class="three wide">Sparkletots</th>
+																				<th class="four wide">PCF Sparkletots Preschool Bukit Batok West Avenue 8</th>
+																				<th class="two wide">
+																					<div class="extra">
+																						<div class="ui star rating" data-rating="4"><i class="icon active"></i><i
+																							class="icon active"></i><i class="icon active"></i><i
+																							class="icon active"></i><i class="icon"></i></div>
+																						</div>
+																					</th>
+																					<th class="one wide">2344</th>
+																					<th class="one wide">
+																						<div class="ui read-only radio checkbox">
+																							<input type="checkbox" checked="checked" disabled="disabled">
+																							<label></label>
+																						</div>
+																					</th>
+																				</tr>
+																			</thead>
+																		</table>
+																		<table class="ui basic table" id="noBoxShadow">
+																			<thead>
+																				<tr class="center aligned">
+																					<th class="two wide">
+																						<div class="image">
+																							<img src="./7Up Childcentres_files/mfs-0316.jpg">
+																						</div>
+																					</th>
+																					<th class="three wide">Sparkletots</th>
+																					<th class="four wide">PCF Sparkletots Preschool Bukit Batok West Avenue 8</th>
+																					<th class="two wide">
+																						<div class="extra">
+																							<div class="ui star rating" data-rating="4"><i class="icon active"></i><i
+																								class="icon active"></i><i class="icon active"></i><i
+																								class="icon active"></i><i class="icon"></i></div>
+																							</div>
+																						</th>
+																						<th class="one wide">2344</th>
+																						<th class="one wide">
+																							<div class="ui read-only radio checkbox">
+																								<input type="checkbox" checked="checked" disabled="disabled">
+																								<label></label>
+																							</div>
+																						</th>
+																					</tr>
+																				</thead>
+																			</table>
+																			<table class="ui basic table" id="noBoxShadow">
+																				<thead>
+																					<tr class="center aligned">
+																						<th class="two wide">
+																							<div class="image">
+																								<img src="./7Up Childcentres_files/mfs-0316.jpg">
+																							</div>
+																						</th>
+																						<th class="three wide">Sparkletots</th>
+																						<th class="four wide">PCF Sparkletots Preschool Bukit Batok West Avenue 8</th>
+																						<th class="two wide">
+																							<div class="extra">
+																								<div class="ui star rating" data-rating="4"><i class="icon active"></i><i
+																									class="icon active"></i><i class="icon active"></i><i
+																									class="icon active"></i><i class="icon"></i></div>
+																								</div>
+																							</th>
+																							<th class="one wide">2344</th>
+																							<th class="one wide">
+																								<div class="ui read-only radio checkbox">
+																									<input type="checkbox" disabled="disabled">
+																									<label></label>
+																								</div>
+																							</th>
+																						</tr>
+																					</thead>
+																				</table>
+																				
+																				<table class="ui basic table" id="noBoxShadow">
+																					<thead>
+																						<tr class="center aligned">
+																							<th class="two wide">
+																								<div class="image">
+																									<img src="./7Up Childcentres_files/mfs-0316.jpg">
+																								</div>
+																							</th>
+																							<th class="three wide">Sparkletots</th>
+																							<th class="four wide">PCF Sparkletots Preschool Bukit Batok West Avenue 8</th>
+																							<th class="two wide">
+																								<div class="extra">
+																									<div class="ui star rating" data-rating="4"><i class="icon active"></i><i
+																										class="icon active"></i><i class="icon active"></i><i
+																										class="icon active"></i><i class="icon"></i></div>
+																									</div>
+																								</th>
+																								<th class="one wide">2344</th>
+																								<th class="one wide">
+																									<div class="ui read-only radio checkbox">
+																										<input type="checkbox" checked="checked" disabled="disabled">
+																										<label></label>
+																									</div>
+																								</th>
+																							</tr>
+																						</thead>
+																					</table>
+																					<table class="ui basic table" id="noBoxShadow">
+																						<thead>
+																							<tr class="center aligned">
+																								<th class="two wide">
+																									<div class="image">
+																										<img src="./7Up Childcentres_files/mfs-0316.jpg">
+																									</div>
+																								</th>
+																								<th class="three wide">Sparkletots</th>
+																								<th class="four wide">PCF Sparkletots Preschool Bukit Batok West Avenue 8</th>
+																								<th class="two wide">
+																									<div class="extra">
+																										<div class="ui star rating" data-rating="4"><i class="icon active"></i><i
+																											class="icon active"></i><i class="icon active"></i><i
+																											class="icon active"></i><i class="icon"></i></div>
+																										</div>
+																									</th>
+																									<th class="one wide">2344</th>
+																									<th class="one wide">
+																										<div class="ui read-only radio checkbox">
+																											<input type="checkbox" checked="checked" disabled="disabled">
+																											<label></label>
+																										</div>
+																									</th>
+																								</tr>
+																							</thead>
+																						</table>
+																						<table class="ui basic table" id="noBoxShadow">
+																							<thead>
+																								<tr class="center aligned">
+																									<th class="two wide">
+																										<div class="image">
+																											<img src="./7Up Childcentres_files/mfs-0316.jpg">
+																										</div>
+																									</th>
+																									<th class="three wide">Sparkletots</th>
+																									<th class="four wide">PCF Sparkletots Preschool Bukit Batok West Avenue 8</th>
+																									<th class="two wide">
+																										<div class="extra">
+																											<div class="ui star rating" data-rating="4"><i class="icon active"></i><i
+																												class="icon active"></i><i class="icon active"></i><i
+																												class="icon active"></i><i class="icon"></i></div>
+																											</div>
+																										</th>
+																										<th class="one wide">2344</th>
+																										<th class="one wide">
+																											<div class="ui read-only radio checkbox">
+																												<input type="checkbox" disabled="disabled">
+																												<label></label>
+																											</div>
+																										</th>
+																									</tr>
+																								</thead>
+																							</table>
+																						</div>
+																						<!--PAGE NUMBER-->
+																						<div class = "ui horizontal divider"></div>
+																						<div class = "ui horizontal divider"></div>
+																						<div class = "ui horizontal divider"></div>
+																						<div class="ui right floated left aligned borderless pagination menu" id="noBoxShadow">
+																							
+																							<a class="icon item">
+																								<i class="left chevron icon"></i>
+																							</a>
+																							<a class="item active">1</a>
+																							<a class="item">2</a>
+																							<a class="item">3</a>
+																							<a class="item">4</a>
+																							<a class="item">5</a>
+																							<a class="item">6</a>
+																							<a class="icon item">
+																								<i class="right chevron icon"></i>
+																							</a>
+																							<!-- TODO Javascript for pagination -->
+																							
+																						</div>
+																						
+																					</div>
+																					<div class="row"></div>
+																					<div class="row"></div>
+																					<div class="row"></div>
+																				</div>
+																				
+																				
+																				
+																				<div class="ui grid center aligned" id="botpic"></div>
+																			</body>
+																			
+																			</html>

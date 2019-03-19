@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en" class="gr__trello-attachments_s3_amazonaws_com"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>7Up Childcentres</title>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" crossorigin="anonymous"></script>
+	<script type="text/javascript" src="http://code.jquery.com/ui/1.10.2/jquery-ui.js"></script>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css">
+	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/fomantic-ui/2.7.2/semantic.min.css">
+
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+	<!-- range.css link -->
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.js"></script>
+	
+	
+	<script type="text/javascript">$(document).ready(function(){$(".rating").rating({maxRating:5});});</script>
+		<style>
+	
+	#search {
+		width: 50%;
+	}
+	#title {
+		margin:10px;
+		margin-left:30px;
+	}
+	#childicon {
+		margin:0px;
+		padding: 0px;
+	}
+	.large.text {
+		font-size: 1.5rem;
+	}
+
+	.medium.text{
+		font-size: 1.2rem;
+	}
+
+	#menubar {
+		margin-bottom: 1.6px;
+	}
+
+	#blackbox {
+            margin-top: 0px;
+            margin-bottom: 0px;
+            padding: 0px;
+        }
+</style>
+
+
+</head>
+
+<script>
+// Function to handle delete as well as other events on marker popup open
+function onPopupOpen() {
+
+var tempMarker = this;
+
+//var tempMarkerGeoJSON = this.toGeoJSON();
+
+//var lID = tempMarker._leaflet_id; // Getting Leaflet ID of this marker
+
+// To remove marker on click of delete
+$(".marker-delete-button:visible").click(function () {
+    map.removeLayer(tempMarker);
+});
+}
+
+
+// getting all the markers at once
+function getAllMarkers() {
+
+var allMarkersObjArray = [];//new Array();
+var allMarkersGeoJsonArray = [];//new Array();
+
+$.each(map._layers, function (ml) {
+    //console.log(map._layers)
+    if (map._layers[ml].feature) {
+        
+        allMarkersObjArray.push(this)
+                                allMarkersGeoJsonArray.push(JSON.stringify(this.toGeoJSON()))
+    }
+})
+
+console.log(allMarkersObjArray);
+alert("total Markers : " + allMarkersGeoJsonArray.length + "\n\n" + allMarkersGeoJsonArray + "\n\n Also see your console for object view of this array" );
+}
+
+$(".get-markers").on("click", getAllMarkers);
+</script>
+
+<body data-gr-c-s-loaded="true" style="">
+    
+       
+    <div class="ui inverted borderless menu" id="blackbox">
+        <a class="item large text" id="title" href="{% url 'Homepage' %}">
+            7UP Ch<i class="child icon" id="childicon"></i>ldcare
+        </a>
+        <div class="item right" id="search">
+            <div class="ui icon input">
+                <input type="text" placeholder="Search...">
+                <i class="search link icon"></i>
+            </div>
+        </div>
+        <div class="right menu medium text">
+            <a class="item" href="{% url 'Explore_Grid' %}">
+                <i class="compass outline icon"></i> Explore
+            </a>
+            <a class="item" href="{%url 'maps' %}">
+                <i class="map outline icon"></i> Maps
+            </a>
+            <a class="item" href="{% url 'subsidy' %}">
+                <i class="dollar sign icon"></i> Subsidies
+            </a>
+
+            <a class="ui item">
+                <i class="object ungroup outline icon"></i> Compare
+            </a>
+        </div>
+    </div>
+        
+    <div class="ui grid container">
+		<div class="ui four wide column">
+			</div>
+		<div class="ui segment basic twelve wide column">
+            <!--Filter bar-->
+			<div class="ui left rail">
+				<div class="ui basic segment">
+					<div class ="ui segment">
+						<i class="filter icon"></i>
+						<span class = "text"> Filter</span>
+						<button class = "ui basic button" id = "clearAllButton" onclick="resetform();" >
+							Clear All
+						</button>
+				  </div>
+				<form id="filterForm">
+						<div class="ui styled fluid accordion">
+									<div class="active title">
+									  <i class="dropdown icon"></i>
+									  COST ($$)
+									</div>
+									<div class="active content">
+										<div class="ui form">
+											<div class="grouped fields">
+												<div class="field">
+													<div class="ui radio checkbox">
+														<input type="radio" name="cost" value="small">
+														<label>$1k-1.2</label>
+													</div>
+												</div>
+												<div class="field">
+													<div class="ui radio checkbox">
+														<input type="radio" name="cost" value="medium">
+														<label>$1.2k-1.3</label>
+													</div>
+												</div>
+												<div class="field">
+													<div class="ui radio checkbox">
+														<input type="radio" name="cost" value="large">
+														<label>$1.3k-1.4</label>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+
+									<div class="title">
+									  <i class="dropdown icon"></i>
+									  LOCATION
+									</div>
+									<div class="content">
+										<div class="ui icon input" id ="location">
+											<input type="text" placeholder="Nearby...">
+											<button class="ui icon button">
+												<i class="map marker alternate icon"></i>
+											  </button>
+										  </div>
+									</div>
+
+									<div class="title">
+									  <i class="dropdown icon"></i>
+									  AREA
+									</div>
+									<div class="content">
+											<div class="active content">
+													<div class="ui form">
+														<div class="grouped fields">
+															<div class="field">
+																<div class="ui radio checkbox">
+																	<input type="radio" name="area" >
+																	<label>North</label>
+																</div>
+															</div>
+															<div class="field">
+																<div class="ui radio checkbox">
+																	<input type="radio" name="area" >
+																	<label>South</label>
+																</div>
+															</div>
+															<div class="field">
+																<div class="ui radio checkbox">
+																	<input type="radio" name="area" >
+																	<label>East</label>
+																</div>
+															</div>
+															<div class="field">
+																<div class="ui radio checkbox">
+																	<input type="radio" name="area" >
+																	<label>West</label>
+																</div>
+															</div>
+														</div>
+													</div>
+											</div>
+									</div>
+
+									<div class="title">
+											<i class="dropdown icon"></i>
+											AGE
+										</div>
+										<div class="content">
+												<div class="active content">
+														<div class="ui form">
+															<div class="grouped fields">
+																<div class="field">
+																	<div class="ui radio checkbox">
+																		<input type="radio" name="age" value="small">
+																		<label> 18 months and below(Infant) </label>
+																	</div>
+																</div>
+																<div class="field">
+																	<div class="ui radio checkbox">
+																		<input type="radio" name="age" value="medium">
+																		<label> 18-30months </label>
+																	</div>
+																</div>
+																<div class="field">
+																	<div class="ui radio checkbox">
+																		<input type="radio" name="age" value="large">
+																		<label> 3yrs(N1)</label>
+																	</div>
+																</div>
+																<div class="field">
+																	<div class="ui radio checkbox">
+																		<input type="radio" name="age" value="x-large">
+																		<label>4yrs(N2) </label>
+																	</div>
+																</div>
+																<div class="field">
+																		<div class="ui radio checkbox">
+																			<input type="radio" name="age" value="x-large">
+																			<label>5yrs(K1) </label>
+																		</div>
+																</div>
+																<div class="field">
+																		<div class="ui radio checkbox">
+																			<input type="radio" name="age" value="x-large">
+																			<label>6yrs(K2) </label>
+																		</div>
+																	</div>
+															</div>
+														</div>
+												</div>
+										</div>
+
+									<div class="title">
+									  <i class="dropdown icon"></i>
+									  2ND LANGUAGE
+									</div>
+									<div class="content">
+											<div class="active content">
+													<div class="ui form">
+														<div class="grouped fields">
+															<div class="field">
+																<div class="ui radio checkbox">
+																	<input type="radio" name="language" >
+																	<label>Chinese</label>
+																</div>
+															</div>
+															<div class="field">
+																<div class="ui radio checkbox">
+																	<input type="radio" name="language" >
+																	<label>Malay</label>
+																</div>
+															</div>
+															<div class="field">
+																<div class="ui radio checkbox">
+																	<input type="radio" name="language" >
+																	<label>Tamil</label>
+																</div>
+															</div>
+															<div class="field">
+																<div class="ui radio checkbox">
+																	<input type="radio" name="language" >
+																	<label>Others</label>
+																</div>
+															</div>
+														</div>
+													</div>
+											</div>
+									</div>
+
+									<div class="title">
+											<i class="dropdown icon"></i>
+											HOURS
+										</div>
+										<div class="content">
+												<div class="active content">
+														<div class="ui form">
+															<div class="grouped fields">
+																<div class="field">
+																	<div class="ui radio checkbox">
+																		<input type="radio" name="hour" >
+																		<label>Full Day</label>
+																	</div>
+																</div>
+																<div class="field">
+																	<div class="ui radio checkbox">
+																		<input type="radio" name="hour" >
+																		<label>Half Day AM</label>
+																	</div>
+																</div>
+																<div class="field">
+																	<div class="ui radio checkbox">
+																		<input type="radio" name="hour" >
+																		<label>Half Day PM</label>
+																	</div>
+																</div>
+																
+															</div>
+														</div>
+												</div>
+										</div>
+
+									<div class="title">
+									  <i class="dropdown icon"></i>
+									  RATINGS
+									</div>
+									<div class="content">
+											<div class="active content">
+													<div class="ui form">
+														<div class="grouped fields">
+															<div class="field">
+																<div class="ui radio checkbox">
+																	<input type="radio" name="rating" value="x-large">
+																	<label>5</label>
+																</div>
+															</div>
+															<div class="field">
+																<div class="ui radio checkbox">
+																	<input type="radio" name="rating" value="x-large">
+																	<label>4</label>
+																</div>
+															</div>
+															<div class="field">
+																<div class="ui radio checkbox">
+																	<input type="radio" name="rating" value="large">
+																	<label>3</label>
+																</div>
+															</div>
+															<div class="field">
+																<div class="ui radio checkbox">
+																	<input type="radio" name="rating" value="medium">
+																	<label>2</label>
+																</div>
+															</div>
+															<div class="field">
+																	<div class="ui radio checkbox">
+																		<input type="radio" name="rating" value="small">
+																		<label>1</label>
+																	</div>
+																</div>
+														</div>
+													</div>
+											</div>
+									</div>
+
+	
+	
+
+									
+						</div>
+					</form>
+                </div>
+			</div>
+			<!-- VIEW BY -->
+			<div class="ui stackable two column grid container">
+					<div class="row">
+						<div class="column"></div>
+						<div class="column">
+							<div class="ui right floated left aligned menu" id="noBoxShadow">
+								<div class="header item">View by</div>
+								<a class="item" href="{% url 'Explore_Grid' %}">Grid</a>
+								<a class="item" href="{% url 'Explore_List' %}">List</a>
+								<a class="item active" href="{% url 'maps' %}">Map</a>
+							</div>
+						</div>
+					</div>
+					<div class="row"></div>
+				</div>
+
+
+            <!--Maps-->
+            <div>
+				<div class="ui embed" >
+					<iframe width="1000" height="600" src="https://data.gov.sg/dataset/child-care-services/resource/195b6c5f-c277-4ba9-bcdc-25c264e3ee5c/view/68e14189-58c9-4194-8b13-609c2f7968dc" frameBorder="0"> </iframe>
+				</div>
+            </div>
+        </div>
+
+
+    
+</body></html>

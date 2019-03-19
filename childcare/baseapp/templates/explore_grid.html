@@ -34,10 +34,16 @@
 
         $(document).ready(function() {
             $('#listerine').click(function() {
-                console.log("YEBOI2")
-                document.getElementById("layout").innerHTML = "Hello"
+                $('#layout').load("{% url 'Explore_List' %}");
             });
         });
+
+        $(document).ready(function() {
+            $('#mapjs').click(function() {
+                $('#layout').load("{%url 'maps' %}")
+            })
+        })
+        
         
 
     </script>
@@ -477,7 +483,7 @@
                             <div class="header item">View by</div>
                             <a class="item active" id="grid" href="{% url 'Explore_Grid' %}">Grid</a>
                             <a class="item" id="listerine">List</a>
-                            <a class="item" id="map" href="{% url 'maps' %}">Map</a>
+                            <a class="item" id="mapjs">Map</a>
                         </div>
                     </div>
                 </div>
