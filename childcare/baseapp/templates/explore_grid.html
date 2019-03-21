@@ -11,7 +11,7 @@
 
 	$(document).ready(function () {
 		$('#listerine').click(function () {
-			$('#layout').load("{% url 'Explore_List' %}");
+			$('#layout').load("{% url 'explore_list' %}");
 		});
 	});
 
@@ -363,7 +363,7 @@
 				<div class="column">
 					<div class="ui right floated left aligned menu" id="noBoxShadow">
 						<div class="header item">View by</div>
-						<a class="item active" id="grid" href="{% url 'Explore_Grid' %}">Grid</a>
+						<a class="item active" id="grid" href="{% url 'explore_grid' %}">Grid</a>
 						<a class="item" id="listerine">List</a>
 						<a class="item" id="mapjs">Map</a>
 					</div>
